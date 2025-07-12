@@ -29,6 +29,46 @@ Create a virtual environment with Python 3.8:
 conda create -n rasa_bot python=3.8
 ```
 ### ✅ 2. Activate the environment
+```bash
+conda activate rasa_bot
+```
+### ✅ 3. Install Rasa
+```bash
+pip install rasa
+```
+### ✅ 4. Initialize the Rasa project
+```bash
+rasa init
+```
+This will:
+- Generate the folder structure
+- Create training data and responses
+- Train an initial model
+- Launch an optional interactive test
+
+---
+
+### ✅ 5. Open the project in VS Code
+
+After initializing:
+- Open **VS Code**
+- Go to `File > Open Folder` and select the chatbot project folder
+- Open the **Command Palette** (`Ctrl + Shift + P`)
+- Select: `Python: Select Interpreter`
+- Choose the interpreter from `rasa_bot` environment (e.g., `conda-env:rasa_bot`)
+
+---
+### ✅ 6. Train the bot
+
+Use this command anytime you modify intents or stories:
+```bash
+rasa train
+```
+
+
+
+
+
 
 
 

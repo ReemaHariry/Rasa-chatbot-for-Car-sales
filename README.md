@@ -24,7 +24,6 @@ This project was created using `rasa init`. The key folders/files include:
 | `rasa train`           | Retrains the model after changes              |
 | `rasa shell`           | Talk to the bot in the terminal               |
 | `rasa shell nlu`       | Test NLU understanding of intents/entities    |
-| `rasa interactive`     | Improve model interactively                   |
 
 
 ## 🛠️ Setup Instructions (Using Anaconda)
@@ -94,25 +93,21 @@ This section summarizes all updates made to the Rasa chatbot across different fi
 #### Intents Added:
 - `greet`
 - `ask_price`
-- `inquire_models`
-- `schedule_test_drive`
-- `faq`
 - `goodbye`
 
-> Each intent includes multiple training examples defined in `data/nlu.yml`.
 
 ---
 
 ### 📄 `domain.yml` – Bot Configuration
 
 #### Intents:
-- `greet`
-- `ask_price`
-- `inquire_models`
-- `schedule_test_drive`
-- `faq`
-- `goodbye`
-
+  - `greet`
+  - `goodbye`
+  - affirm
+  - deny
+  - bot_challenge
+  - ask_price
+  - 
 #### Entities:
 - `car_model`
 

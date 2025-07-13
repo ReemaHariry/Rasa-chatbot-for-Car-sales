@@ -24,6 +24,8 @@ This project was created using `rasa init`. The key folders/files include:
 | `rasa train`           | Retrains the model after changes              |
 | `rasa shell`           | Talk to the bot in the terminal               |
 | `rasa shell nlu`       | Test NLU understanding of intents/entities    |
+| `rasa run actions --debug`| To start the action server                 |
+
 
 
 ## 🛠️ Setup Instructions (Using Anaconda)
@@ -91,9 +93,21 @@ This section summarizes all updates made to the Rasa chatbot across different fi
 ### 📄 `nlu.yml` – Intents and Training Examples
 
 #### Intents Added:
-- `greet`
-- `ask_price`
-- `goodbye`
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_price
+  - inquire_model
+  - schedule_test_drive
+  - ask_features
+  - ask_dealership
+  - ask_warranty
+  - ask_maintenance
+  - ask_availability
 
 
 ---
@@ -101,40 +115,56 @@ This section summarizes all updates made to the Rasa chatbot across different fi
 ### 📄 `domain.yml` – Bot Configuration
 
 #### Intents:
-  - `greet`
-  - `goodbye`
+  - greet
+  - goodbye
   - affirm
   - deny
+  - mood_great
+  - mood_unhappy
   - bot_challenge
   - ask_price
-  - 
+  - inquire_model
+  - schedule_test_drive
+  - ask_features
+  - ask_dealership
+  - ask_warranty
+  - ask_maintenance
+  - ask_availability
+
 #### Entities:
 - `car_model`
 
 #### Slots:
-_(none added yet)_
+-`car model`
 
 #### Responses:
-- `utter_greet`
-- `utter_goodbye`
-- `utter_faq`
-- `utter_ask_car_model`
-- `utter_provide_car_price`
-- `utter_inquire_models`
-- `utter_schedule_test_drive`
-- `utter_price_known`
-- `utter_price_unknown`
+- utter_greet
+- utter_goodbye
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_iamabot
+- utter_ask_car_model
+- utter_provide_car_price
+- utter_available_models
+- utter_confirm_test_drive
+- utter_features_info
+- utter_dealership_info
+- utter_warranty_info
+- utter_maintenance_info
+- utter_availability_info
+
+
 
 #### Actions:
-_(none added yet – only using `utter_` responses)_
+  - action_show_available_models
+  - action_provide_car_price
+  - action_handle_test_drive
 
 ---
 
-### 📄 `rules.yml` – Rule-Based Conversations
+### 📄 `stories.yml`
 
-#### Rules Added:
-- **Rule: Known Car Price** – If user asks for price and mentions a known car model, bot responds with `utter_provide_car_price`.
-- **Rule: Unknown Car Price** – If car model is not recognized, bot responds with `utter_ask_car_model`.
 
 
 ---

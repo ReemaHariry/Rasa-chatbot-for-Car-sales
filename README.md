@@ -133,9 +133,11 @@ This section summarizes all updates made to the Rasa chatbot across different fi
 
 #### Entities:
 - `car_model`
+- `car_make`
 
 #### Slots:
 -`car model`
+`car_make`
 
 #### Responses:
 - utter_greet
@@ -157,14 +159,15 @@ This section summarizes all updates made to the Rasa chatbot across different fi
 
 
 #### Actions:
-  - action_show_available_models
+  - action_show_available_models ( it show all the models using nhtsa vehicle API)
   - action_provide_car_price
   - action_handle_test_drive
 
 ---
 
 ### 📄 `stories.yml`
-
+- **show car models** it uses the [intent:inquire_model] [actions: utter_ask_car_make , action_show_available_models]
+- 
 
 
 ---
